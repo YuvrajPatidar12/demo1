@@ -1,0 +1,91 @@
+Scenario:
+Implement a module that handles sellers, buyers, and products. Buyers and sellers are both users, differentiated by their roles. Products belong to sellers.
+
+Properties:
+Buyer/Seller:
+    • first_name
+    • last_name
+    • date_of_birth
+    • address
+    • role
+
+Raw Data for Buyers and Sellers:
+[
+ {:first_name => 'alex', :last_name => 'newman',  :date_of_birth => '01-05-  1982',  :address => 'sapna sangeeta', :role => 'buyer'},
+ {:first_name => 'alex', :last_name => 'Panc',  :date_of_birth => '12-04-  1990',  :address => 'bhanwar kua', :role => 'seller'},
+ {:first_name => 'Meena', :last_name => 'Pallanipppan',  :date_of_birth => '03-02-  1988',  :address => 'sapna sangeeta', :role => 'seller'},
+ {:first_name => 'Prabhu', :last_name => 'Sharma',  :date_of_birth => '11-02-  1992',  :address => 'geeta bhawan', :role => 'seller'},
+ {:first_name => 'Sundar', :last_name => 'Pichai',  :date_of_birth => '11-05-1983',  :address => 'vijay nagar', :role => 'buyer'}
+]
+
+Properties for Products:
+    • product_name
+    • seller_name
+    • price
+    • category
+
+Raw Data for Products:
+[
+ {:name => 'bicycle', :seller => 'alex', price => 3000, category: 'vehicle'},
+ {:name => 'car', :seller => 'meena', price => 250000, category: 'vehicle'},
+ {:name => 'jeans', :seller => 'prabhu', price => 1800, category: 'clothes'},
+ {:name => 'shirt', :seller => 'prabhu', price => 700, category: 'clothes'},
+ {:name => 'blue shirt', :seller => 'prabhu', price => 1200, category: 'clothes' },
+ {:name => 't-shirt', :seller => 'prabhu', price => 600, category: 'clothes'},
+ {:name => 'capri', :seller => 'prabhu', price => 300, category: 'clothes'},
+ {:name => 'bike', :seller => 'meena', price => 60000, category: 'vehicle'},
+ {:name => 'scooter', :seller => 'meena', price => 25000, category: 'vehicle'},
+ {:name => 'maruti', :seller => 'meena', price => 400000, category: 'vehicle'},
+ {:name => 'auto', :seller => 'meena', price => 100000, category: 'vehicle'},
+ {:name => 'sweater', :seller => 'prabhu', price => 1200, category: 'clothes'},
+ {:name => 'jacket', :seller => 'prabhu', price => 3500, category: 'clothes'},
+ {:name => 'hat', :seller => 'prabhu', price => 400, category: 'clothes'},
+ {:name => 'doll', :seller => 'alex', price => 350, category: 'toys'},
+ {:name => 'toy car', :seller => 'alex', price => 250, category: 'toys'},
+ {:name => 'bat', :seller => 'alex', price => 700, category: 'toys'},
+ {:name => 'ball', :seller => 'alex', price => 20, category: 'toys'},
+ {:name => 'batman', :seller => 'alex', price => 300, category: 'toys'},
+ {:name => 'barbi doll', :seller => 'alex', price => 3000, category: 'toys'}
+]
+
+Hint:
+There would be a User class, a Seller class, a Buyer class, and Product class. You need to find out the relationship among the classes by the given scenario. Also, on the basis of the given scenario, you need to find out which method would belong to which class, whether the method would be a class method or an instance method.
+
+Find below the functionality that you need to implement for the given scenario:
+    1. Take the list of all the users and return an array of user objects corresponding to the list.
+        ◦ Parameters: List of all the users (hash) given above.
+        ◦ Output: Return a list of user objects.
+    2. Take the list of all the products and return an array of product objects corresponding to the given list.
+        ◦ Parameters: List of all the products (hash) given above.
+        ◦ Output: Return a list of product objects.
+    3. Write a method to get the full name of a buyer (e.g., suppose :first_name => 'alex' and :last_name => 'newman' of a user, then the full name would be 'Alex Newman').
+        ◦ Parameters: A buyer record, for example: {:first_name => 'Sundar', :last_name => 'Pichai', :date_of_birth => '11-05-1983', :address => 'vijay nagar', :role => 'buyer'}
+        ◦ Output: "Sundar Pichai"
+    4. Write a method to get the full name of a buyer/seller (e.g., suppose :first_name => 'alex' and :last_name => 'newman' of a user, then the full name would be 'Alex Neewman').
+    5. Write a method to find the age of a buyer/seller on the basis of their date_of_birth.
+        ◦ Parameter: A buyer/seller record, for example: {:first_name => 'Sundar', :last_name => 'Pichai', :date_of_birth => '11-05-1983', :address => 'vijay nagar', :role => 'buyer'}
+        ◦ Output: Return the age of the user after calculating from date_of_birth.
+    6. Write a method in the Buyer class, which will take all the users list as input and return buyers only.
+        ◦ Parameters: All the users given above.
+        ◦ Output: Return an array of all the buyer objects.
+    7. Write a method in the Seller class, which will take all the users list as input and return sellers only.
+        ◦ Parameters: All the users given above.
+        ◦ Output: Return an array of all the seller objects.
+    8. Find all the users whose first name is 'alex'.
+        ◦ Parameters: All the users list given above.
+        ◦ Output: Return an array of all the user objects whose first name is 'alex'.
+    9. Find the number of sellers and buyers whose first name is 'alex'.
+        ◦ Parameters: All the users list given above.
+        ◦ Output: Return an array of all the user objects whose first name is 'alex'.
+    10. Find the total price of products that have the 'toys' category.
+    11. How many toys Sundar Pichai can buy with an amount of 1000.
+        ◦ Give toy details in the output as well.
+
+Important Instructions:
+    1. Write DRY code as much as possible.
+    2. Use Ruby concepts, including modules, classes, instance methods, class methods, instance variables, class variables, access specifiers, etc., where appropriate.
+    3. Keep the code clean with appropriate method names, proper indentation, and suitable module/class names.
+    4. Write modular code without overthinking or creating unnecessary modules.
+    5. The purpose of this exercise is to gain practical experience with Ruby concepts.
+
+Note: This is an individual assignment, please do not solve it in group.
